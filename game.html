@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title> Lunar Lander Project </title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body class="game">
+    <canvas id="gamecanvas" width="1280" height="720"></canvas>
+
+    <div id="mission-briefing">
+
+        <div id="briefing-page-1">
+        <div id= "briefing-box">
+            <h1>MISSION BRIEFING</h1>
+            <p>Welcome to the Lunar Lander Project! <br>
+             Your mission is to safely establish the Apollo 11 CSM and LM in lunar orbit.
+            This is the first half of the mission: Translunar Flight.
+            Manage your velocity and trajectory as you travel from Earth to the Moon.
+            Once lunar orbit is achieved, you will proceed to Stage 2: Lunar Descent.
+            Good luck astronaut!</p>
+            <button id="briefing-next-1">Next</button>
+            </div>
+        </div>
+
+    <div id="briefing-page-2">
+    <h1>CONTROLS</h1>
+    <p>
+        Use the following controls to maneuver the spacecraft during flight.
+    </p>
+
+ <div id="controls-diagram-id">
+
+    <div id="upkey">
+        <p>↑</p>
+    </div>
+
+    <div id="up-label">
+        <p>MAIN ENGINE THRUST</p>
+    </div>
+    <div id="up-line"></div>
+
+    <div id="downkey">
+        <p>↓</p>
+    </div>
+
+    <div id="down-label">
+        <p>REVERSE RCS THRUST</p>
+    </div>
+    <div id="down-line"></div>
+
+    <div id="leftkey">
+        <p>←</p>
+    </div>
+
+    <div id="left-label">
+        <p>LEFT RCS ROTATION</p>
+    </div>
+    <div id="left-line"></div>
+
+    <div id="rightkey">
+        <p>→</p>
+    </div>
+
+    <div id="right-label">
+        <p>RIGHT RCS ROTATION</p>
+    </div>
+    <div id="right-line"></div>
+
+</div>
+    
+    <button id="briefing-back-2">← BACK</button>
+    <button id="briefing-next-2">NEXT →</button>
+    </div>
+
+    <div id="briefing-page-3">
+    <h1>LUNAR ORBIT WINDOW</h1>
+    <p>
+        The grey ring around the Moon represents the target lunar-orbit zone.
+        Your goal is to keep the spacecraft within this zone while
+        establishing lunar orbit.
+    </p>
+    <img src ="images\orbital-window-demo.png" id="orbital-window-demo">
+
+    <div>
+    <button id="briefing-back-3">← BACK</button>
+    <button id="begin-mission-button">BEGIN MISSION</button>
+    </div>
+    </div>
+    </div>
+
+    <div id="game-ui">
+        <div id="fps-Counter">
+        FPS: 0
+        </div>
+        <div id="apollo-hud">
+        <h1>APOLLO 11</h1>
+        <span id="flight-phase">FLIGHT PHASE : TRANSLUNAR FLIGHT</span> <br>
+        <span id="velocity">VELOCITY : 0 km/s</span> <br>
+        <span id="orbital-progress"> ORBITAL PROGRESS : 0%</span> <br>
+        <span id="mission-time">MISSION ELAPSED : 00:00:00</span> <br>
+        <div id="fuel-bar-container">
+            <div id="fuel-bar"></div>
+        <div id="fuel-bar-label">FUEL</div>
+        </div>
+        <div id="csm-status-diagram">
+        <canvas id="csm-status-canvas" width="200" height="220"></canvas>    
+        </div>
+    </div>    
+        <div id= "in-orbit-notification">
+        <p> 🛰️ You are now inside the target lunar-orbit zone! Keep it in there!</p>
+        </div>
+        <div id="crash-screen" class="crash-screen">
+    <div class="crash-box">
+        <h1>💥 CRASHED</h1>
+        <p>Press R to restart the flight</p>
+    </div>
+</div>
+<div id="orbit-screen" class="orbit-screen">
+    <div class="orbit-box">
+        <h1>🚀 ORBIT ACHIEVED</h1>
+        <p>Successful lunar orbit! Proceed to landing.</p><br>
+        <p id="orbit-Time"> </p>
+        <button id="proceed-button"> Proceed to Landing! </button>
+    </div>
+</div>
+    </div>
+
+    <script src="stage1game.js"></script>
+    <script src="stage2game.js"></script>
+</body>
+</html>

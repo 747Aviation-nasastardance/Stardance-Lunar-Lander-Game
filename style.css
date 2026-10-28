@@ -1,0 +1,416 @@
+body
+{background-color: black;
+background-image: url("images/stars.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: white;
+text-align: center;
+}
+
+h1 {font-size: 60px;
+}
+
+.moon{
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.stardance {
+     position: fixed;
+     bottom: 10px;
+     width: 100%;
+}
+
+button {font-size: 20px;
+        color: white;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin: 20px;
+        transition: transform 0.2s;
+}
+
+
+button:hover {
+    transform: scale(1.10);
+}
+
+.vehicles {
+    display: flex;
+    justify-content: center;
+}
+
+#gamecanvas { width: 100%;
+     height:auto;
+      aspect-ratio: 16/9;
+       display: block; }
+
+.game {margin:0;
+    width:100vw;
+    height:100vh;
+    background-image:none;
+overflow:hidden;
+}
+
+#game-ui {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+#orbit-screen {
+    pointer-events: auto;
+}
+
+#fps-Counter {
+   position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    background: rgba(0, 0, 0, 0.35);
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+.notifcations-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.crash-box {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #ff4444;
+    border-radius: 15px;
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.crash-box h1 {
+    color: #ff4444;
+    margin: 0 0 10px 0;
+    font-size: 36px;
+}
+
+.landed-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: left;
+}
+
+.landed-box {
+    background: rgba(20, 20, 20, 0.95);
+    border: 2px solid #00AEEF;
+    border-radius: 15px;
+    padding: 30px 50px;
+    text-align: left;
+}
+
+.landed-box h1 {
+    color:#ffffff;
+    margin: 0 0 10px 0;
+    font-size: 36px;
+}
+
+.landed-box p {
+    color : white;
+    margin : 0 0 10px 0;
+    font-size: 20px;
+}
+
+
+#flight-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgb(255, 255, 255);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+#orbit-progress {
+    position: absolute;
+    top: 50px;
+    left: 15px;
+    color: rgb(255, 255, 255);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 5px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+}
+
+#apollo-hud {
+    position : absolute;
+    top: 1px;
+    left: 10px;
+    color : rgb(255, 255, 255);
+    font-family :"Trebuchet MS", sans-serif;
+    font-size : 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: left;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+#apollo-hud h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 3;
+}
+
+#in-orbit-notification {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    left : 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+}
+
+#briefing-page-2,
+#briefing-page-3 {
+    display: none;
+}
+
+#mission-briefing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.5;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+
+
+#controls-diagram-id {
+    position: relative;
+    height : 140px;
+    padding : 10px;
+
+}
+
+#upkey {
+    position: absolute;
+    top: 10px;
+    left: 325px;
+    display : flex;
+    width : 50px;
+    height: 50px;
+    border : 2px solid rgba(255, 255, 255, 0.6);
+    border-radius : 8px;
+    background-color : rgba(0, 0, 0, 0.4);
+    box-shadow : 0 2px 2px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    align-items : center;
+    justify-content : center;
+}
+
+#downkey {
+    position: absolute;
+    top: 70px;
+    left: 325px;
+    display : flex;
+    width : 50px;
+    height: 50px;
+    border : 2px solid rgba(255, 255, 255, 0.6);
+    border-radius : 8px;
+    background-color : rgba(0, 0, 0, 0.4);
+    box-shadow : 0 2px 2px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    align-items : center;
+    justify-content : center;
+}
+
+#leftkey {
+    position: absolute;
+    top: 70px;
+    left: 265px;
+    display : flex;
+    width : 50px;
+    height: 50px;
+    border : 2px solid rgba(255, 255, 255, 0.6);
+    border-radius : 8px;
+    background-color : rgba(0, 0, 0, 0.4);
+    box-shadow : 0 2px 2px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    align-items : center;
+    justify-content : center;
+}
+
+#rightkey {
+    position: absolute;
+    top: 70px;
+    left: 385px;
+    display : flex;
+    width : 50px;
+    height: 50px;
+    border : 2px solid rgba(255, 255, 255, 0.6);
+    border-radius : 8px;
+    background-color : rgba(0, 0, 0, 0.4);
+    box-shadow : 0 2px 2px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    align-items : center;
+    justify-content : center;
+}
+
+#up-label {
+    position: absolute;
+    top: 5px;
+    left: 400px;
+    white-space: nowrap;
+}
+
+#down-label {
+    position: absolute;
+    top: 130px;
+    left: 280px;
+    white-space: nowrap;
+}
+
+#left-label {
+    position: absolute;
+    top: 70px;
+    left: 100px;
+    white-space: nowrap;
+}
+
+#right-label {
+    position: absolute;
+    top: 70px;
+    left: 475px;
+    white-space: nowrap;
+}
+
+#up-line {
+    position: absolute;
+    top: 35px;
+    left: 375px;
+    width: 25px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#down-line {
+    position: absolute;
+    top: 120px;
+    left: 350px;
+    width: 1px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#left-line {
+    position: absolute;
+    top: 95px;
+    left: 205px;
+    width: 60px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#right-line {
+    position: absolute;
+    top: 95px;
+    left: 435px;
+    width: 40px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#orbital-window-demo {
+    width: 400px;
+    height: auto;
+}
+
+#csm-status-diagram {
+    margin-top: 12px;
+    height: 220px;
+}
+
+
+#lunar-module {
+    position : absolute;
+    left : 0;
+    top : 0;
+}
+
+#lunar-module-image {
+    width : 100px !important;
+    height : auto;
+}
+
+#fuel-display {
+    width: 150px;
+    color : white;
+    font-family : sans-serif;
+
+}
+
+#fuel-bar-container {
+    width : 100%;
+    height: 12px;
+    background : #333;
+    border : 1px solid #aaa;
+    border-radius : 4px;
+    overflow: hidden;
+}
+
+#fuel-bar {
+    width : 100%;
+    height: 100%;
+    border-radius : 4px;
+    background : linear-gradient(
+        to left,
+        #d8d8d0 0%,
+        #92958d 30%,
+        #51564f 75%,
+        #30352f 100%
+    );
+}
